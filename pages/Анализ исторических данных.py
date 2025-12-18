@@ -131,7 +131,7 @@ fig.add_trace(go.Bar(
     
 fig.update_layout(
     xaxis_title='Сезон',
-    yaxis_title='Температура (C)',
+    yaxis_title='Температура (°C)',
     height=400,
     showlegend=False)
 
@@ -140,7 +140,7 @@ fig.update_xaxes(ticktext=seasons, tickvals=seasons)
 st.plotly_chart(fig)
 
 #=======================ДОПОЛНИТЕЛЬНЫЕ ГРАФИКИ НА БОНУС=======================================
-st.subheader(f'Шаг 6: Гистограмма распределения температуры')
+st.subheader(f'Шаг 6: Гистограмма распределения температуры для города {city_selected}')
 
 # Множественный выбор сезонов
 selected_seasons = st.multiselect(
@@ -171,7 +171,7 @@ fig.add_trace(go.Histogram(
 # Настройка внешнего вида
 fig.update_layout(
     xaxis=dict(
-        title='Температура (C)',
+        title='Температура (°C)',
         title_font=dict(size=14)
     ),
     yaxis=dict(
@@ -191,7 +191,7 @@ fig.add_vline(
     x=mean_temp, 
     line_dash='dash', 
     line_color='red',
-    annotation_text=f'Среднее: {mean_temp:.1f}C',
+    annotation_text=f'Среднее: {mean_temp:.1f}°C',
     annotation_position='top right'
 )
 
